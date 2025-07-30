@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Предупреждение: ваша жена может оставить вас нищим</title>
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #000000;
+            color: #ffffff;
+            line-height: 1.4;
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+
+        /* Заголовки */
+        h1 {
+            font-size: 38px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff0000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 900;
+            margin: 40px 0 20px 0;
+            color: #ff0000;
+            text-transform: uppercase;
+            border-left: 5px solid #ff0000;
+            padding-left: 15px;
+        }
+
+        /* Основной текст */
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        /* Выделения */
+        .red {
+            color: #ff0000;
+            font-weight: 900;
+        }
+
+        .white-bold {
+            color: #ffffff;
+            font-weight: 900;
+        }
+
+        .big {
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .huge {
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        /* Блоки с фото */
+        .photo-block {
+            margin: 30px 0;
+            border: 3px solid #ff0000;
+        }
+
+        .photo-block img {
+            width: 100%;
+            height: auto;
+            min-height: 250px;
+            max-height: 400px;
+            object-fit: contain;
+            background: #000000;
+            display: block;
+        }
+
+        .photo-caption {
+            background: #ff0000;
+            color: #000000;
+            padding: 15px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        /* Красные блоки */
+        .red-block {
+            background: #ff0000;
+            color: #000000;
+            padding: 25px;
+            margin: 30px 0;
+            border: none;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .red-block h2 {
+            color: #000000;
+            margin-bottom: 15px;
+            border: none;
+            padding: 0;
+        }
+
+        /* Черные блоки с красной рамкой */
+        .black-block {
+            background: #000000;
+            border: 3px solid #ff0000;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        /* Кнопка главная */
+        .main-cta {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 25px 40px;
+            background: #ff0000;
+            color: #000000;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 24px;
+            text-align: center;
+            text-transform: uppercase;
+            border: 3px solid #ffffff;
+            animation: main-pulse 2s infinite;
+        }
+
+        .main-cta:hover {
+            background: #ffffff;
+            color: #ff0000;
+            border: 3px solid #ff0000;
+        }
+
+        @keyframes main-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
+        }
+
+        /* Urgency блоки */
+        .urgency {
+            background: #ff0000;
+            color: #000000;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+            border: 3px solid #ffffff;
+        }
+
+        /* Финальный блок */
+        .final {
+            background: #000000;
+            border: 5px solid #ff0000;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        /* Разделители */
+        .divider {
+            width: 100%;
+            height: 3px;
+            background: #ff0000;
+            margin: 40px 0;
+        }
+
+        /* Цитаты */
+        .quote {
+            background: #222222;
+            border-left: 5px solid #ff0000;
+            padding: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            font-size: 20px;
+            color: #ff6666;
+        }
+
+        /* Центрирование */
+        .center {
+            text-align: center;
+        }
+
+        /* Стрелки */
+        .arrows {
+            color: #ff0000;
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        /* Адаптив */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+            
+            p {
+                font-size: 16px;
+            }
+            
+            .photo-block img {
+                min-height: 200px;
+                max-height: 300px;
+            }
+            
+            .main-cta {
+                font-size: 18px;
+                padding: 20px 30px;
+            }
+        }
+
+        /* Убираем все лишние анимации кроме ключевых */
+        * {
+            transition: none !important;
+        }
+        
+        .main-cta {
+            transition: all 0.3s ease !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h1>ПРЕДУПРЕЖДЕНИЕ: ВАША ЖЕНА МОЖЕТ ОСТАВИТЬ ВАС НИЩИМ</h1>
+        
+        <p>22 года доверял жене больше себя.</p>
+        
+        <p>Квартиры, машины - всё на неё оформил "из любви".</p>
+        
+        <p>2 года назад мне поставили неизлечимый диагноз.</p>
+        
+        <p>Остановил проекты. Развивал её бизнес. Тратил накопления.</p>
+        
+        <p>Пока жили в нашей прекрасной квартире, которую я купил - всё устраивало.</p>
+        
+        <p class="white-bold">Деньги кончились.</p>
+
+        <div class="quote">
+            "Ты больше не муж."
+        </div>
+
+        <!-- Фото из Таиланда -->
+        <div class="photo-block">
+            <img src="https://optim.tildacdn.com/tild6434-3935-4661-b730-343931343439/-/format/webp/IMG_0333.JPG.webp" alt="Хорошие времена">
+            <div class="photo-caption">Тогда - хорошие времена</div>
+        </div>
+
+        <p>Сто лет не был в такой ситуации. Но деньги нужны сегодня.</p>
+
+        <p>Начал действовать. Сразу пошёл сюда:</p>
+
+        <!-- Фото склада -->
+        <div class="photo-block">
+            <img src="https://optim.tildacdn.com/tild3830-6165-4635-a430-646330643431/-/format/webp/photo_2025-07-30_18-.jpg.webp" alt="Склад">
+            <div class="photo-caption">Сейчас - склад Wildberries</div>
+        </div>
+
+        <p>12 часов смена. 52 года.</p>
+
+        <div class="divider"></div>
+
+        <p>А знаете, что она сказала?</p>
+
+        <div class="quote">
+            "Дело не в деньгах. Ты просто не заботился обо мне."
+        </div>
+
+        <p class="big center red">СЕРЬЁЗНО?</p>
+
+        <p>22 года не заботился - почему не ушла при $10k в месяц?</p>
+
+        <p>Почему 22 года терпела "плохого мужа" с BMW и квартирами в Таиланде?</p>
+
+        <p class="center huge red">МЫ ЗНАЕМ ОТВЕТ.</p>
+
+        <div class="red-block">
+            <h2>ЕСТЬ ДЕНЬГИ - ЗАБОТЛИВЫЙ МУЖ</h2>
+            <h2>НЕТ ДЕНЕГ - ЭГОИСТИЧНЫЙ МУДАК</h2>
+        </div>
+
+        <div class="black-block">
+            <p class="big">22 года работы → ноль в кармане</p>
+            <p class="big">22 года доверия → юридически бездомный</p>
+            <p class="big red">22 года "мы" → склад в одиночку</p>
+        </div>
+
+        <p><span class="red">8 из 10 браков</span> заканчиваются так.</p>
+
+        <div class="urgency">
+            <p class="big">НА КОГО ОФОРМЛЕНА ТВОЯ СОБСТВЕННОСТЬ?</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <p>Я знаю, о чём говорю. Я умею подниматься.</p>
+
+        <p>2011 - долг 2,5 млн. Мясокомбинат отжимал бизнес.</p>
+
+        <p>2014 - заработал миллион долларов.</p>
+
+        <p class="red">Но всё потратил на семью.</p>
+
+        <p>Надо было становиться рантье. Оформлять на себя.</p>
+
+        <p class="white-bold">Не понимал главного.</p>
+
+        <p>Посмотри вокруг.</p>
+
+        <div class="red-block">
+            <h2>НЕ ВАЖНО КТО ТЫ СЕЙЧАС</h2>
+            <p class="big">Предприниматель или на зарплате.</p>
+            <p class="big">После 50 тебя скорее всего уволят.</p>
+            <p class="big">98% бизнесов не доживают до 20 лет.</p>
+        </div>
+
+        <p class="huge red center">А ДАЛЬШЕ ЧТО? СКЛАД? МОГИЛА?</p>
+
+        <p>Сколько мужчин после 60 свободны?</p>
+
+        <p>Большинство мертвы или нищие.</p>
+
+        <p>Остальные работают до могилы.</p>
+
+        <div class="black-block">
+            <p class="big white-bold">БЕЗ ЛИЧНОГО КАПИТАЛА - ТЫ РАСХОДНЫЙ МАТЕРИАЛ</p>
+        </div>
+
+        <div class="black-block">
+            <p class="big">Свободных единицы.</p>
+            <p class="big red">Те, кто стал рантье.</p>
+            <p class="white-bold">Рантье - тот, кто живёт на проценты с капитала.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <p>Я даже разослал 1000 резюме.</p>
+
+        <p>"Пошёл нафиг, мы берём молодых."</p>
+
+        <p class="white-bold">Вот она - стабильная работа после 50.</p>
+
+        <div class="urgency">
+            <p class="big">ВРЕМЯ РАБОТАЕТ ПРОТИВ НАС</p>
+        </div>
+
+        <p>Каждый день без капитала - день рабства.</p>
+
+        <div class="divider"></div>
+
+        <div class="divider"></div>
+
+        <p>Я мог бы молчать. Делать вид, что всё в порядке.</p>
+
+        <p class="white-bold">Но я рассказываю правду.</p>
+
+        <p>Потому что знаю выход.</p>
+
+        <p>Мой друг Игорь вырвался из той же ямы.</p>
+
+        <p class="red">Показал мне, как это сделать сегодня.</p>
+
+        <h2>И ТЕПЕРЬ Я ЗНАЮ СЕКРЕТ</h2>
+
+        <p>Простой. Работающий.</p>
+
+        <div class="red-block">
+            <h2>КАК ЗА 3 ГОДА СТАТЬ РАНТЬЕ</h2>
+        </div>
+
+        <p>Не хочу, чтобы ты повторил мою судьбу.</p>
+
+        <p>А если уже на дне - посмотри, что может тебе помочь.</p>
+
+        <p class="red">Не хочу, чтобы ты платил мою цену.</p>
+
+        <div class="urgency">
+            <p class="big">Я ЖДАЛ 22 ГОДА. СКОЛЬКО БУДЕШЬ ЖДАТЬ ТЫ?</p>
+        </div>
+
+        <!-- Финальный блок -->
+        <div class="final">
+            <h2 style="color: #ff0000; margin-bottom: 20px;">ЗАЩИТИ СЕБЯ ОТ ПРЕДАТЕЛЬСТВА</h2>
+            
+            <p class="big" style="margin-bottom: 30px;">
+                План, как стать рантье за 3 года
+            </p>
+        </div>
+
+        <a href="https://2my.netlify.app/" class="main-cta">
+            🔥 УЗНАТЬ МОЙ ПЛАН 🔥
+        </a>
+
+        <p class="center">👆 <span class="arrows">▲▲▲ НЕ ПОВТОРЯЙ МОЮ СУДЬБУ ▲▲▲</span> 👆<br>
+        Стань свободным</p>
+
+    </div>
+
+    <script>
+        // Отслеживание кликов
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.main-cta').addEventListener('click', function() {
+                console.log('Переход на 2-й лонгрид:', this.href);
+            });
+        });
+    </script>
+</body>
+</html>
